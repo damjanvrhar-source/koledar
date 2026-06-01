@@ -3,96 +3,198 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Damjanov Premium Koledar</title>
+<title>Damjanov koledar</title>
 
 <style>
+
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
 html,body{
-    width:100%;
-    height:100%;
-    overflow:hidden;
-    font-family:Segoe UI, Arial, sans-serif;
+width:100%;
+height:100%;
+overflow:hidden;
+font-family:Segoe UI, Arial, sans-serif;
 }
 
 body{
-    background:url('hf_20260531_150404_bca28c50-cc4f-4d19-b686-547d534a9c47.png') no-repeat;
-    background-position:left center;
-    background-size:auto 140%;
-    background-color:#0f1320;
+background:url('hf_20260531_150404_bca28c50-cc4f-4d19-b686-547d534a9c47.png') no-repeat;
+background-position:left center;
+background-size:auto 120%;
+background-color:#0f1320;
 }
+
+/* DESNI PANEL */
+
 .panel{
-    position:absolute;
-    right:40px;
-    top:40px;
+position:absolute;
+right:40px;
+top:40px;
 
-    padding:25px;
+padding:25px;
 
-    border-radius:20px;
+border-radius:20px;
 
-    background:rgba(0,0,0,0.25);
+background:rgba(0,0,0,0.25);
 
-    backdrop-filter:blur(10px);
+backdrop-filter:blur(10px);
 
-    color:white;
+color:white;
 
-    text-align:right;
+text-align:right;
 
-    min-width:320px;
+min-width:340px;
 
-    box-shadow:0 0 25px rgba(0,0,0,0.4);
+box-shadow:0 0 25px rgba(0,0,0,0.4);
 }
 
 #time{
-    font-size:72px;
-    font-weight:700;
-    color:#ffffff;
+font-size:72px;
+font-weight:700;
 }
 
 #date{
-    font-size:28px;
-    margin-top:10px;
-    color:#d9c4ff;
+font-size:28px;
+margin-top:10px;
+color:#d9c4ff;
 }
 
 .line{
-    height:2px;
-    background:linear-gradient(to left,#ffd84d,#7b4dff);
-    margin:18px 0;
+height:2px;
+margin:18px 0;
+background:linear-gradient(to left,#ffd84d,#7b4dff);
 }
 
 #weather{
-    font-size:26px;
+font-size:26px;
 }
 
 .title{
-    color:#ffd84d;
-    font-weight:bold;
-    margin-bottom:8px;
-    letter-spacing:1px;
+color:#ffd84d;
+font-weight:bold;
+margin-bottom:8px;
 }
+
+/* KOLEDAR */
+
+.calendar{
+
+position:absolute;
+
+left:45%;
+top:50%;
+
+transform:translate(-50%,-50%);
+
+background:rgba(0,0,0,0.20);
+
+backdrop-filter:blur(10px);
+
+padding:30px;
+
+border-radius:25px;
+
+color:white;
+
+width:500px;
+
+box-shadow:0 0 25px rgba(0,0,0,0.4);
+
+}
+
+.month{
+font-size:34px;
+font-weight:bold;
+text-align:center;
+margin-bottom:25px;
+color:#ffd84d;
+}
+
+.days{
+display:grid;
+grid-template-columns:repeat(7,1fr);
+gap:10px;
+text-align:center;
+}
+
+.dayname{
+font-weight:bold;
+color:#d9c4ff;
+padding-bottom:10px;
+}
+
+.day{
+padding:8px;
+border-radius:10px;
+}
+
+.today{
+background:#7b4dff;
+font-weight:bold;
+}
+
 </style>
 </head>
 
 <body>
 
 <div class="calendar">
-    <div class="month">JUNIJ 2026</div>
 
-    <div class="days">
-        <div>PON</div><div>TOR</div><div>SRE</div><div>ČET</div><div>PET</div><div>SOB</div><div>NED</div>
+<div class="month">JUNIJ 2026</div>
 
-        <div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div><div>7</div>
-        <div>8</div><div>9</div><div>10</div><div>11</div><div>12</div><div>13</div><div>14</div>
-        <div>15</div><div>16</div><div>17</div><div>18</div><div>19</div><div>20</div><div>21</div>
-        <div>22</div><div>23</div><div>24</div><div>25</div><div>26</div><div>27</div><div>28</div>
-        <div>29</div><div>30</div>
-    </div>
-</div><div class="panel">
+<div class="days">
+
+<div class="dayname">PON</div>
+<div class="dayname">TOR</div>
+<div class="dayname">SRE</div>
+<div class="dayname">ČET</div>
+<div class="dayname">PET</div>
+<div class="dayname">SOB</div>
+<div class="dayname">NED</div>
+
+<div class="day today">1</div>
+<div class="day">2</div>
+<div class="day">3</div>
+<div class="day">4</div>
+<div class="day">5</div>
+<div class="day">6</div>
+<div class="day">7</div>
+
+<div class="day">8</div>
+<div class="day">9</div>
+<div class="day">10</div>
+<div class="day">11</div>
+<div class="day">12</div>
+<div class="day">13</div>
+<div class="day">14</div>
+
+<div class="day">15</div>
+<div class="day">16</div>
+<div class="day">17</div>
+<div class="day">18</div>
+<div class="day">19</div>
+<div class="day">20</div>
+<div class="day">21</div>
+
+<div class="day">22</div>
+<div class="day">23</div>
+<div class="day">24</div>
+<div class="day">25</div>
+<div class="day">26</div>
+<div class="day">27</div>
+<div class="day">28</div>
+
+<div class="day">29</div>
+<div class="day">30</div>
+
+</div>
+
+</div>
+
+<div class="panel">
 
 <div id="time"></div>
 
@@ -139,12 +241,12 @@ const response=await fetch(
 const data=await response.json();
 
 document.getElementById("weather").innerHTML=
-"🌤️ "+data.current.temperature_2m+" °C";
+"🌤️ " + data.current.temperature_2m + " °C";
 
 }catch{
 
 document.getElementById("weather").innerHTML=
-"Podatki niso na voljo";
+"Vreme ni na voljo";
 
 }
 
