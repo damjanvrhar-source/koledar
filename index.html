@@ -200,7 +200,58 @@ document.getElementById("weather").innerHTML=
 
 loadWeather();
 setInterval(loadWeather,1800000);
+const monthNames = [
+"JANUAR","FEBRUAR","MAREC","APRIL","MAJ","JUNIJ",
+"JULIJ","AVGUST","SEPTEMBER","OKTOBER","NOVEMBER","DECEMBER"
+];
 
+const dayNames = ["PON","TOR","SRE","ČET","PET","SOB","NED"];
+
+function createCalendar(){
+
+const now = new Date();
+
+const year = now.getFullYear();
+const month = now.getMonth();
+const today = now.getDate();
+
+const firstDay = new Date(year, month, 1);
+const lastDay = new Date(year, month + 1, 0);
+
+let startDay = firstDay.getDay();
+startDay = startDay === 0 ? 6 : startDay - 1;
+
+let html = '';
+
+html += '<div class="month">'+monthNames[month]+' '+year+'</div>';
+html += '<div class="days">';
+
+for(const day of dayNames){
+    html += '<div class="dayname">'+day+'</div>';
+}
+
+for(let i=0;i<startDay;i++){
+    html += '<div></div>';
+}
+
+for(let day=1; day<=lastDay.getDate(); day++){
+
+    let cls = 'day';
+
+    if(day === today){
+        cls += ' today';
+    }
+
+    html += '<div class="'+cls+'">'+day+'</div>';
+}
+
+html += '</div>';
+
+document.getElementById('calendar').innerHTML = html;
+
+}
+
+createCalendar();
 </script>
 
 </body>
